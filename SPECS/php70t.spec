@@ -730,7 +730,8 @@ License: PHP and BSD
 %endif
 Requires: php-common%{?_isa} = %{version}-%{release}
 %if %{with_libgd}
-BuildRequires: gd-devel >= 2.1.1
+# BuildRequires: gd-devel >= 2.1.1
+BuildRequires: gd-devel
 %if 0%{?fedora} <= 19 && 0%{?rhel} <= 7
 Requires: gd-last%{?_isa} >= 2.1.1
 %else
