@@ -878,7 +878,8 @@ Group: System Environment/Libraries
 License: PHP
 Requires: php-common%{?_isa} = %{version}-%{release}
 # Upstream requires 4.0, we require 50 to ensure use of libicu-last
-BuildRequires: libicu-devel >= 50
+# BuildRequires: libicu-devel >= 50
+BuildRequires: libicu-devel
 Obsoletes: php53-intl, php53u-intl, php54-intl, php54w-intl, php55u-intl, php55w-intl, php56u-intl, php56w-intl, php70u-intl, php70w-intl
 
 %description intl
