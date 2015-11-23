@@ -398,6 +398,8 @@ Provides: php-spl, php-spl%{?_isa}
 Provides: php-standard = %{version}, php-standard%{?_isa} = %{version}
 Provides: php-tokenizer, php-tokenizer%{?_isa}
 Provides: php-zlib, php-zlib%{?_isa}
+Provides: php-common
+Provides: php-common-%{version}-%{release}
 # For user experience, those extensions were part of php-common
 Requires:  php-json%{?_isa}
 #Requires:  php-zip%{?_isa}
