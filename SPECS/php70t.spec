@@ -244,9 +244,9 @@ Provides: php-zts%{?_isa} = %{version}-%{release}
 
 Requires: httpd-mmn = %{_httpd_mmn}
 Provides: mod_php = %{version}-%{release}
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 # For backwards-compatibility, require php-cli for the time being:
-Requires: php-cli%{?_isa} = %{version}-%{release}
+Requires: php-cli%{?_isa} = %{version}-%{release}.vortex
 # To ensure correct /var/lib/php/session ownership:
 %if %{with_httpd2410}
 Requires(pre): httpd-filesystem
@@ -279,7 +279,7 @@ which adds support for the PHP language to Apache HTTP Server.
 %package cli
 Group: Development/Languages
 Summary: Command-line interface for PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Provides: php-cgi = %{version}-%{release}, php-cgi%{?_isa} = %{version}-%{release}
 Provides: php-pcntl, php-pcntl%{?_isa}
 Provides: php-readline, php-readline%{?_isa}
@@ -293,7 +293,7 @@ executing PHP scripts, /usr/bin/php, and the CGI interface.
 %package dbg
 Group: Development/Languages
 Summary: The interactive PHP debugger
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Obsoletes: php56u-dbg, php56w-dbg
 
 %description dbg
@@ -308,7 +308,7 @@ Summary: PHP FastCGI Process Manager
 # TSRM and fpm are licensed under BSD
 License: PHP and Zend and BSD
 BuildRequires: libacl-devel
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Requires(pre): /usr/sbin/useradd
 %if %{with_systemdfull}
 BuildRequires: systemd-devel
@@ -352,7 +352,7 @@ any size, especially busier sites.
 %package litespeed
 Summary: LiteSpeed Web Server PHP support
 Group: Development/Languages
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Obsoletes: php53-litespeed, php53u-litespeed, php54-litespeed, php54w-litespeed, php55u-litespeed, php55w-litespeed, php56u-litespeed, php56w-litespeed, php70u-litespeed, php70w-litespeed, php70t-litespeed
 
 %description litespeed
@@ -400,6 +400,7 @@ Provides: php-tokenizer, php-tokenizer%{?_isa}
 Provides: php-zlib, php-zlib%{?_isa}
 Provides: php-common
 Provides: php-common-%{version}-%{release}
+Provides: php70t-common
 # For user experience, those extensions were part of php-common
 Requires:  php-json%{?_isa}
 #Requires:  php-zip%{?_isa}
@@ -437,7 +438,7 @@ need to install this package.
 Summary:   The Zend OPcache
 Group:     Development/Languages
 License:   PHP
-Requires:  php-common%{?_isa} = %{version}-%{release}
+Requires:  php70t-common
 Obsoletes: php-pecl-zendopcache
 Provides:  php-pecl-zendopcache = %{opcachever}
 Provides:  php-pecl-zendopcache%{?_isa} = %{opcachever}
@@ -456,7 +457,7 @@ Summary: A module for PHP applications that use IMAP
 Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Obsoletes: mod_php3-imap, stronghold-php-imap
 BuildRequires: krb5-devel, openssl-devel, libc-client-devel
 Obsoletes: php53-imap, php53u-imap, php54-imap, php54w-imap, php55u-imap, php55w-imap, php56u-imap, php56w-imap, php70u-imap, php70w-imap, php70-imap
@@ -471,7 +472,7 @@ Summary: A module for PHP applications that use LDAP
 Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 BuildRequires: cyrus-sasl-devel, openldap-devel, openssl-devel
 Obsoletes: php53-ldap, php53u-ldap, php54-ldap, php54w-ldap, php55u-ldap, php55w-ldap, php56u-ldap, php56w-ldap, php70u-ldap, php70w-ldap, php70-ldap
 
@@ -486,7 +487,7 @@ Summary: A database access abstraction module for PHP applications
 Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70-common
 # ABI/API check - Arch specific
 Provides: php-pdo-abi  = %{pdover}%{isasuffix}
 Provides: php(pdo-abi) = %{pdover}%{isasuffix}
@@ -548,7 +549,7 @@ Summary: Modules for PHP script using system process interfaces
 Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Provides: php-posix, php-posix%{?_isa}
 Provides: php-shmop, php-shmop%{?_isa}
 Provides: php-sysvsem, php-sysvsem%{?_isa}
@@ -587,7 +588,7 @@ Summary: A module for PHP applications that use the SOAP protocol
 Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 BuildRequires: libxml2-devel
 Obsoletes: php53-soap, php53u-soap, php54-soap, php54w-soap, php55u-soap, php55w-soap, php56u-soap, php56w-soap, php70u-soap, php70w-soap, php70-soap
 
@@ -661,7 +662,7 @@ Summary: A module for PHP applications that query SNMP-managed devices
 Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}, net-snmp
+Requires: php70t-common
 BuildRequires: net-snmp-devel
 Obsoletes: php53-snmp, php53u-snmp, php54-snmp, php54w-snmp, php55u-snmp, php55w-snmp, php56u-snmp, php56w-snmp, php70u-snmp, php70w-snmp, php70-snmp
 
@@ -676,7 +677,7 @@ Summary: A module for PHP applications which use XML
 Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Provides: php-dom, php-dom%{?_isa}
 Provides: php-domxml, php-domxml%{?_isa}
 Provides: php-simplexml, php-simplexml%{?_isa}
@@ -713,7 +714,7 @@ Group: Development/Languages
 # onigurama is licensed under BSD
 # ucgendat is licensed under OpenLDAP
 License: PHP and LGPLv2 and BSD and OpenLDAP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Obsoletes: php53-mbstring, php53u-mbstring, php54-mbstring, php54w-mbstring, php55u-mbstring, php55w-mbstring, php56u-mbstring, php56w-mbstring, php70u-mbstring, php70w-mbstring, php70-mbstring
 
 %description mbstring
@@ -730,7 +731,7 @@ License: PHP
 # bundled libgd is licensed under BSD
 License: PHP and BSD
 %endif
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 %if %{with_libgd}
 BuildRequires: gd-devel >= 2.1.1
 %if 0%{?fedora} <= 19 && 0%{?rhel} <= 7
@@ -759,7 +760,7 @@ Group: Development/Languages
 # All files licensed under PHP version 3.01, except
 # libbcmath is licensed under LGPLv2+
 License: PHP and LGPLv2+
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Obsoletes: php53-bcmath, php53u-bcmath, php54-bcmath, php54w-bcmath, php55u-bcmath, php55w-bcmath, php56u-bcmath, php56w-bcmath, php70u-bcmath, php70w-bcmath, php70-bcmath
 
 %description bcmath
@@ -772,7 +773,7 @@ Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
 BuildRequires: gmp-devel
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Obsoletes: php53-gmp, php53u-gmp, php54-gmp, php54w-gmp, php55u-gmp, php55w-gmp, php56u-gmp, php56w-gmp, php70u-gmp, php70w-gmp, php70-gmp
 
 %description gmp
@@ -785,7 +786,7 @@ Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
 BuildRequires: %{db_devel}, gdbm-devel, tokyocabinet-devel
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Obsoletes: php53-dba, php53u-dba, php54-dba, php54w-dba, php55u-dba, php55w-dba, php56u-dba, php56w-dba, php70u-dba, php70w-dba, php70-dba
 
 %description dba
@@ -797,7 +798,7 @@ Summary: Standard PHP module provides mcrypt library support
 Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 BuildRequires: libmcrypt-devel
 Obsoletes: php53-mcrypt, php53u-mcrypt, php54-mcrypt, php54w-mcrypt, php55u-mcrypt, php55w-mcrypt, php56u-mcrypt, php56w-mcrypt, php70u-mcrypt, php70w-mcrypt, php70-mcrypt
 
@@ -810,7 +811,7 @@ Summary: Standard PHP module provides tidy library support
 Group: Development/Languages
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 BuildRequires: libtidy-devel
 Obsoletes: php53-tidy, php53u-tidy, php54-tidy, php54w-tidy, php55u-tidy, php55w-tidy, php56u-tidy, php56w-tidy, php70u-tidy, php70w-tidy, php70-tidy
 
@@ -836,7 +837,7 @@ PHP to Microsoft SQL Server and Sybase databases through the FreeTDS libary.
 %package embedded
 Summary: PHP library for embedding in applications
 Group: System Environment/Libraries
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 # doing a real -devel package for just the .so symlink is a bit overkill
 Provides: php-embedded-devel = %{version}-%{release}
 Provides: php-embedded-devel%{?_isa} = %{version}-%{release}
@@ -851,7 +852,7 @@ Summary: A module for PHP applications for using pspell interfaces
 Group: System Environment/Libraries
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 BuildRequires: aspell-devel >= 0.50.0
 Obsoletes: php53-pspell, php53u-pspell, php54-pspell, php54w-pspell, php55u-pspell, php55w-pspell, php56u-pspell, php56w-pspell, php70u-pspell, php70w-pspell, php70-pspell
 
@@ -864,7 +865,7 @@ Summary: A module for PHP applications for using the recode library
 Group: System Environment/Libraries
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 BuildRequires: recode-devel
 Obsoletes: php53-recode, php53u-recode, php54-recode, php54w-recode, php55u-recode, php55w-recode, php56u-recode, php56w-recode, php70u-recode, php70w-recode, php70-recode
 
@@ -877,7 +878,7 @@ Summary: Internationalization extension for PHP applications
 Group: System Environment/Libraries
 # All files licensed under PHP version 3.01
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 # Upstream requires 4.0, we require 50 to ensure use of libicu-last
 BuildRequires: libicu-devel >= 50
 Obsoletes: php53-intl, php53u-intl, php54-intl, php54w-intl, php55u-intl, php55w-intl, php56u-intl, php56w-intl, php70u-intl, php70w-intl, php70-intl
@@ -891,7 +892,7 @@ Summary: Enchant spelling extension for PHP applications
 Group: System Environment/Libraries
 # All files licensed under PHP version 3.0
 License: PHP
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 BuildRequires: enchant-devel >= 1.2.4
 Obsoletes: php53-enchant, php53u-enchant, php54-enchant, php54w-enchant, php55u-enchant, php55w-enchant, php56u-enchant, php56w-enchant, php70u-enchant, php70w-enchant, php70-enchant
 
@@ -905,7 +906,7 @@ Summary: ZIP archive management extension for PHP
 # All files licensed under PHP version 3.0.1
 License: PHP
 Group: System Environment/Libraries
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Obsoletes: php-pecl-zip          < %{zipver}
 Provides:  php-pecl(zip)         = %{zipver}
 Provides:  php-pecl(zip)%{?_isa} = %{zipver}
@@ -927,7 +928,7 @@ Summary: JavaScript Object Notation extension for PHP
 # All files licensed under PHP version 3.0.1
 License: PHP
 Group: System Environment/Libraries
-Requires: php-common%{?_isa} = %{version}-%{release}
+Requires: php70t-common
 Obsoletes: php-pecl-json          < %{jsonver}
 Obsoletes: php-pecl-jsonc         < %{jsonver}
 Provides:  php-pecl(json)         = %{jsonver}
