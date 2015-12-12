@@ -1292,7 +1292,8 @@ build --includedir=%{_includedir}/php-zts \
       --enable-intl=shared \
       --with-icu-dir=%{_prefix} \
       --with-enchant=shared,%{_prefix} \
-      --with-recode=shared,%{_prefix}
+      --with-recode=shared,%{_prefix} \
+      --enable-maintainer-zts
 popd
 
 # Build a special thread-safe Apache SAPI
@@ -1643,8 +1644,10 @@ fi
 
 %files dbg
 %{_bindir}/phpdbg
+%{_bindir}/zts-phpdbg
 %doc sapi/phpdbg/{README.md,CREDITS}
 %{_mandir}/man1/phpdbg.1*
+%{_mandir}/man1/zts-phpdbg.1*
 
 %files fpm
 %doc php-fpm.conf.default www.conf.default
@@ -1736,7 +1739,7 @@ fi
 
 %changelog
 * Sat Dec 12 2015 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 7.0.0-1.vortex
-- Trying to port from IUS/Fedora to vortex with threads.
+- Trying to port from IUS/Fedora to vortex with default threading.
 
 * Thu Dec 10 2015 Carl George <carl.george@rackspace.com> - 7.0.0-1.ius
 - Port from Fedora to IUS
