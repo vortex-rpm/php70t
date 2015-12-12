@@ -78,7 +78,7 @@
 %global db_devel  libdb-devel
 %endif
 
-%global rpmrel 1
+%global rpmrel 2
 
 Summary: PHP scripting language for creating dynamic web sites
 Name: php%{?ius_suffix}
@@ -1171,7 +1171,8 @@ build --libdir=%{_libdir}/php \
       --enable-intl=shared \
       --with-icu-dir=%{_prefix} \
       --with-enchant=shared,%{_prefix} \
-      --with-recode=shared,%{_prefix}
+      --with-recode=shared,%{_prefix} \
+      --enable-maintainer-zts
 popd
 
 without_shared="--without-gd \
@@ -1292,8 +1293,7 @@ build --includedir=%{_includedir}/php-zts \
       --enable-intl=shared \
       --with-icu-dir=%{_prefix} \
       --with-enchant=shared,%{_prefix} \
-      --with-recode=shared,%{_prefix} \
-      --enable-maintainer-zts
+      --with-recode=shared,%{_prefix}
 popd
 
 # Build a special thread-safe Apache SAPI
@@ -1738,6 +1738,9 @@ fi
 
 
 %changelog
+* Sat Dec 12 2015 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 7.0.0-2.vortex
+- Correctly enable ZTS.
+
 * Sat Dec 12 2015 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 7.0.0-1.vortex
 - Trying to port from IUS/Fedora to vortex with default threading.
 
