@@ -357,7 +357,7 @@ Provides: %{name}-zlib, %{name}-zlib%{?_isa}
 Provides: php-common = %{version}-%{release}
 Provides: php-common%{?_isa} = %{version}-%{release}
 Conflicts: php-common < %{base_ver}
-Conflicts: php55u-common, php56u-common
+Conflicts: php55u-common, php56u-common, php56u-common
 
 %description common
 The php-common package contains files used by both the php
