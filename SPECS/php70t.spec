@@ -1081,6 +1081,7 @@ ln -sf ../configure
     --without-gdbm \
     --with-jpeg-dir=%{_prefix} \
     --with-openssl \
+    --enable-maintainer-zts \
 %if %{with_libpcre}
     --with-pcre-regex=%{_prefix} \
 %endif
@@ -1171,8 +1172,7 @@ build --libdir=%{_libdir}/php \
       --enable-intl=shared \
       --with-icu-dir=%{_prefix} \
       --with-enchant=shared,%{_prefix} \
-      --with-recode=shared,%{_prefix} \
-      --enable-maintainer-zts
+      --with-recode=shared,%{_prefix}
 popd
 
 without_shared="--without-gd \
