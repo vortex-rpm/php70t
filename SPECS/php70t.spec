@@ -1605,6 +1605,7 @@ fi
 %{_httpd_contentdir}/icons/php.gif
 
 %files common -f files.common
+%files common -f files.pdo_dblib
 %doc CODING_STANDARDS CREDITS EXTENSIONS NEWS README*
 %license LICENSE Zend/ZEND_* TSRM_LICENSE
 %license libmagic_LICENSE
