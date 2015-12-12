@@ -282,7 +282,7 @@ Nginx configuration files for the PHP FastCGI Process Manager.
 Group: Development/Languages
 Summary: Apache HTTP Server configuration for PHP-FPM
 Requires: php-fpm%{?_isa} = %{version}-%{release}
-Requires: httpd >= 2.4
+Requires: httpd >= 2.2
 
 %description fpm-httpd
 Apache HTTP Server configuration file for the PHP FastCGI Process Manager.
