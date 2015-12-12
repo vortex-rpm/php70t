@@ -145,7 +145,7 @@ BuildRequires: bzip2-devel, curl-devel >= 7.9
 BuildRequires: pam-devel
 BuildRequires: libstdc++-devel, openssl-devel
 BuildRequires: sqlite-devel >= 3.6.0
-BuildRequires: zlib-devel, smtpdaemon, libedit-devel
+BuildRequires: zlib-devel, smtpdaemon, libedit-devel, freetds-devel
 %if %{with_libpcre}
 BuildRequires: pcre-devel >= 6.6
 %endif
