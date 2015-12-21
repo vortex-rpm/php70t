@@ -78,11 +78,11 @@
 %global db_devel  libdb-devel
 %endif
 
-%global rpmrel 2
+%global rpmrel 1
 
 Summary: PHP scripting language for creating dynamic web sites
 Name: php%{?ius_suffix}
-Version: 7.0.0
+Version: 7.0.1
 Release: %{rpmrel}.vortex%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
@@ -1738,6 +1738,9 @@ fi
 
 
 %changelog
+* Mon Dec 21 2015 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 7.0.1-1.vortex
+- Update to 7.0.1.
+
 * Sat Dec 12 2015 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 7.0.0-2.vortex
 - Correctly enable ZTS.
 
